@@ -1,0 +1,85 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram id="ebs-lifecycle" name="EBS lifecycle">
+    <mxGraphModel dx="1030" dy="611" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="950" background="#FAFBFD" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;SPL-TF-100-STIEBS-3 - Introduction to Amazon EBS&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:12px&quot;&gt;Create, attach, resize, tune, snapshot and restore EBS volumes&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#2B3A55;" parent="1" vertex="1">
+          <mxGeometry x="40" y="10" width="700" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="You&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;AWS Console&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientColor=none;fillColor=#D18B5A;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;" parent="1" vertex="1">
+          <mxGeometry x="231" y="70" width="78" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="region" value="Region: us-west-2 or us-east-1" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_region;strokeColor=#5B7DB1;fillColor=#E3EDF8;fontColor=#5B7DB1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="190" width="1060" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="az" value="Availability Zone (same zone as the instances, e.g. us-west-2a)" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_availability_zone;strokeColor=#147EBA;fillColor=#FFFFFF;fontColor=#147EBA;dashed=1;" parent="region" vertex="1">
+          <mxGeometry x="20" y="50" width="780" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="newapp" value="&lt;b&gt;EC2 instance: New_App&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FCEBDD;strokeColor=#D18B5A;strokeWidth=1.5;fontColor=#D18B5A;fontSize=13;verticalAlign=top;align=left;spacingLeft=60;spacingTop=14;container=1;collapsible=0;recursiveResize=0;" parent="az" vertex="1">
+          <mxGeometry x="30" y="50" width="380" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="newapp_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="newapp" vertex="1">
+          <mxGeometry x="12" y="8" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="boot1" value="&lt;b&gt;Boot volume 8 GiB (Boot_Vol_x)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:10px&quot;&gt;/dev/xvda | Delete on termination: Yes&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B7DB1;strokeWidth=1.2;fontColor=#2B3A55;fontSize=11;align=left;verticalAlign=middle;spacingLeft=56;" parent="newapp" vertex="1">
+          <mxGeometry x="20" y="70" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="boot1_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.elastic_block_store;" parent="boot1" vertex="1">
+          <mxGeometry x="10" y="22" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="perf" value="&lt;b&gt;New_App_Performance (challenge)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:10px&quot;&gt;io2 | 50 GiB | 20000 IOPS | encrypted&lt;br&gt;/dev/sdh &amp;gt; /mnt/performance-store&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7B6BB0;strokeWidth=1.2;fontColor=#2B3A55;fontSize=11;align=left;verticalAlign=middle;spacingLeft=56;dashed=1;" parent="newapp" vertex="1">
+          <mxGeometry x="20" y="160" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="perf_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.elastic_block_store;" parent="perf" vertex="1">
+          <mxGeometry x="10" y="22" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="main" value="&lt;b&gt;New_App_Main&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:10px&quot;&gt;gp3 | 30 &amp;gt; 50 GiB | 3000 IOPS | 250 MiB/s | encrypted (aws/ebs)&lt;br&gt;/dev/sdf &amp;gt; /mnt/data-store&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#DDF1E8;strokeColor=#4E9C7C;strokeWidth=1.2;fontColor=#2B3A55;fontSize=11;align=left;verticalAlign=middle;spacingLeft=56;" parent="newapp" vertex="1">
+          <mxGeometry x="20" y="250" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="main_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.elastic_block_store;" parent="main" vertex="1">
+          <mxGeometry x="10" y="22" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="rest" value="&lt;b&gt;Restored_App_Main&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:10px&quot;&gt;gp3 | 55 GiB | created from App_Main_Snap&lt;br&gt;/dev/sdg &amp;gt; /mnt/data-store2&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#F9E1E1;strokeColor=#C86B6B;strokeWidth=1.2;fontColor=#2B3A55;fontSize=11;align=left;verticalAlign=middle;spacingLeft=56;" parent="newapp" vertex="1">
+          <mxGeometry x="20" y="340" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rest_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.elastic_block_store;" parent="rest" vertex="1">
+          <mxGeometry x="10" y="22" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="existing" value="&lt;b&gt;EC2 instance: Existing&lt;/b&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FCEBDD;strokeColor=#D18B5A;strokeWidth=1.5;fontColor=#D18B5A;fontSize=13;verticalAlign=top;align=left;spacingLeft=60;spacingTop=14;container=1;collapsible=0;recursiveResize=0;" parent="az" vertex="1">
+          <mxGeometry x="460" y="50" width="300" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="existing_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="existing" vertex="1">
+          <mxGeometry x="12" y="8" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="boot2" value="&lt;b&gt;Boot volume 8 GiB (Boot_Vol_x)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:10px&quot;&gt;/dev/xvda&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B7DB1;strokeWidth=1.2;fontColor=#2B3A55;fontSize=11;align=left;verticalAlign=middle;spacingLeft=56;" parent="existing" vertex="1">
+          <mxGeometry x="20" y="70" width="260" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="boot2_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.elastic_block_store;" parent="boot2" vertex="1">
+          <mxGeometry x="10" y="14.5" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="applogs" value="&lt;b&gt;AppLogs&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:10px&quot;&gt;gp2 &amp;gt; gp3 | 6000 IOPS | 250 MiB/s&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#E3EDF8;strokeColor=#5B7DB1;strokeWidth=1.2;fontColor=#2B3A55;fontSize=11;align=left;verticalAlign=middle;spacingLeft=56;" parent="existing" vertex="1">
+          <mxGeometry x="20" y="150" width="260" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="applogs_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.elastic_block_store;" parent="applogs" vertex="1">
+          <mxGeometry x="10" y="14.5" width="36" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="snap" value="EBS snapshot&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;App_Main_Snap&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#60A337;fillColor=#277116;resIcon=mxgraph.aws4.snapshot;" parent="region" vertex="1">
+          <mxGeometry x="900" y="355" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user" value="&lt;b&gt;Connect&lt;/b&gt; (Session Manager)&lt;br&gt;Tasks 2, 3, 6" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#D18B5A;fontColor=#D18B5A;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="user" target="newapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_snap" value="&lt;b&gt;Task 5&lt;/b&gt;: create snapshot" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#B8963E;fontColor=#B8963E;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="main" target="snap" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_rest" value="&lt;b&gt;Task 6&lt;/b&gt;: create volume from snapshot&lt;br&gt;(attach + mount, no formatting)" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#C86B6B;fontColor=#C86B6B;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="snap" target="rest" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#4E9C7C&quot;&gt;&amp;#9632;&lt;/font&gt; New volume (Task 1)&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#C86B6B&quot;&gt;&amp;#9632;&lt;/font&gt; Restored volume (Task 6)&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#7B6BB0&quot;&gt;&amp;#9632;&lt;/font&gt; Challenge (dashed)&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#5B7DB1&quot;&gt;&amp;#9632;&lt;/font&gt; Boot / AppLogs volumes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5DDE8;fontColor=#2B3A55;fontSize=11;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="840" width="760" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
