@@ -1,0 +1,65 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram id="spl85-cloudfront-s3" name="SPL-85 CloudFront + S3">
+    <mxGraphModel dx="1212" dy="719" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" background="#FAFBFD" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;SPL-85 - Introduction to Amazon CloudFront&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:12px&quot;&gt;Private S3 origin served through a CloudFront distribution&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#2B3A55;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="620" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="viewer" value="Viewer / Browser&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;myimage.html&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientColor=none;fillColor=#D18B5A;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;" parent="1" vertex="1">
+          <mxGeometry x="50" y="260" width="78" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#5A6B85;fillColor=#FFFFFF;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5A6B85;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="230" y="100" width="780" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="cf" value="Amazon CloudFront&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;cloudfront-lab-distribution&lt;br&gt;Edge locations (cache)&lt;br&gt;*.cloudfront.net&lt;/font&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#2B3A55;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" parent="cloud" vertex="1">
+          <mxGeometry x="70" y="150" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="region" value="Region: us-east-1 or us-west-2" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#5B7DB1;fillColor=#E3EDF8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5B7DB1;dashed=1;" parent="cloud" vertex="1">
+          <mxGeometry x="330" y="50" width="420" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="bucket" value="S3 bucket (origin) - Block all public access: ON&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;cf&amp;lt;first initial&amp;gt;&amp;lt;last name&amp;gt;&amp;lt;4 digits&amp;gt;  e.g. cfjstiles1234&lt;/font&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#DDF1E8;strokeColor=#4E9C7C;strokeWidth=1.5;fontColor=#4E9C7C;fontStyle=1;fontSize=12;verticalAlign=top;container=1;collapsible=0;recursiveResize=0;" parent="region" vertex="1">
+          <mxGeometry x="25" y="60" width="370" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="Amazon S3" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#2B3A55;gradientColor=#60A337;gradientDirection=north;fillColor=#277116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" parent="bucket" vertex="1">
+          <mxGeometry x="40" y="70" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="object" value="image.jpg&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;(object - png or jpg)&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#4E9C7C;strokeWidth=1.2;fontColor=#2B3A55;fontStyle=1;fontSize=12;" parent="bucket" vertex="1">
+          <mxGeometry x="190" y="85" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="&lt;b&gt;1&lt;/b&gt;  HTTPS GET&lt;br&gt;https://DOMAIN/OBJECT" style="endArrow=classic;html=1;rounded=0;strokeColor=#D18B5A;strokeWidth=2;fontColor=#D18B5A;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.35;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="viewer" target="cf" edge="1">
+          <mxGeometry x="0.0036" y="28" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="&lt;b&gt;4&lt;/b&gt;  Image (fast after 1st request)" style="endArrow=classic;html=1;rounded=0;strokeColor=#4E9C7C;strokeWidth=2;fontColor=#4E9C7C;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cf" target="viewer" edge="1">
+          <mxGeometry x="0.0338" y="15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="&lt;b&gt;2&lt;/b&gt;  Cache miss: authenticated request&lt;br&gt;(origin access)" style="endArrow=classic;html=1;rounded=0;strokeColor=#7B6BB0;strokeWidth=2;fontColor=#7B6BB0;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.3;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="cf" target="s3" edge="1">
+          <mxGeometry x="-0.0975" y="21" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="&lt;b&gt;3&lt;/b&gt;  Object returned and cached at the edge" style="endArrow=classic;html=1;rounded=0;strokeColor=#4E9C7C;strokeWidth=2;fontColor=#4E9C7C;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="s3" target="cf" edge="1">
+          <mxGeometry x="-0.0078" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edeny" value="Direct S3 object URL  =  &lt;b&gt;AccessDenied&lt;/b&gt;  (public access blocked)" style="endArrow=block;html=1;rounded=0;dashed=1;strokeColor=#C86B6B;strokeWidth=2;fontColor=#C86B6B;fontSize=11;labelBackgroundColor=#FFFFFF;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="viewer" target="bucket" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="89" y="590" />
+              <mxPoint x="805" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#D18B5A&quot;&gt;&amp;#9632;&lt;/font&gt; Request   &lt;font color=&quot;#7B6BB0&quot;&gt;&amp;#9632;&lt;/font&gt; Origin fetch   &lt;font color=&quot;#4E9C7C&quot;&gt;&amp;#9632;&lt;/font&gt; Response   &lt;font color=&quot;#C86B6B&quot;&gt;&amp;#9632;&lt;/font&gt; Blocked path" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5DDE8;fontColor=#2B3A55;fontSize=11;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="620" width="520" height="44" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
