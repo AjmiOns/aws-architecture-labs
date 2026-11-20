@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram id="nlb-web-servers" name="NLB and EC2 web servers">
+    <mxGraphModel dx="1873" dy="1111" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" background="#FAFBFD" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;SPL-68 - Introduction to Elastic Load Balancing&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:12px&quot;&gt;Network Load Balancer in front of two EC2 web servers in two Availability Zones&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#2B3A55;" parent="1" vertex="1">
+          <mxGeometry x="40" y="10" width="760" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="Browser&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;myELB DNS name (HTTP, TCP 80)&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientColor=none;fillColor=#D18B5A;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.client;" parent="1" vertex="1">
+          <mxGeometry x="530" y="70" width="78" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="region" value="Region" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_region;strokeColor=#5B7DB1;fillColor=#E3EDF8;fontColor=#5B7DB1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="200" width="1080" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" value="Lab VPC" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=#FFFFFF;fontColor=#8C4FFF;" parent="region" vertex="1">
+          <mxGeometry x="20" y="50" width="1040" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="nlb" value="Network Load Balancer: myELB&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;SG: ELBSecurityGroup&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;listener TCP" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#E3EDF8;strokeColor=#5B7DB1;strokeWidth=1.5;fontColor=#5B7DB1;fontStyle=1;fontSize=12;verticalAlign=top;container=1;collapsible=0;recursiveResize=0;" parent="vpc" vertex="1">
+          <mxGeometry x="40" y="50" width="960" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="LB node (AZ 1)" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#945DF2;fillColor=#5A30B5;resIcon=mxgraph.aws4.elastic_load_balancing;" parent="nlb" vertex="1">
+          <mxGeometry x="180" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="LB node (AZ 2)" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#945DF2;fillColor=#5A30B5;resIcon=mxgraph.aws4.elastic_load_balancing;" parent="nlb" vertex="1">
+          <mxGeometry x="720" y="40" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="az1" value="Availability Zone 1" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_availability_zone;strokeColor=#147EBA;fillColor=#E9E4F5;fontColor=#147EBA;dashed=1;" parent="vpc" vertex="1">
+          <mxGeometry x="40" y="250" width="470" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" value="EC2 Instance 1&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;Test Website - EC2 Instance 1&lt;br&gt;web server (HTTP)&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="az1" vertex="1">
+          <mxGeometry x="196" y="70" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="az2" value="Availability Zone 2" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_availability_zone;strokeColor=#147EBA;fillColor=#E9E4F5;fontColor=#147EBA;dashed=1;" parent="vpc" vertex="1">
+          <mxGeometry x="550" y="250" width="470" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="i2" value="EC2 Instance 2&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;Test Website - EC2 Instance 2&lt;br&gt;web server (HTTP)&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="az2" vertex="1">
+          <mxGeometry x="196" y="70" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="tg" value="Target group: lb-targets (TCP | healthy threshold 2 | interval 10 s)" style="rounded=1;arcSize=5;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#4E9C7C;strokeWidth=1.5;dashed=1;fontColor=#4E9C7C;fontStyle=1;fontSize=11;verticalAlign=bottom;" parent="vpc" vertex="1">
+          <mxGeometry x="70" y="295" width="900" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user" value="&lt;b&gt;HTTP&lt;/b&gt; to the DNS name" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#D18B5A;fontColor=#D18B5A;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="user" target="nlb" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1" value="default: same AZ" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#5B7DB1;fontColor=#5B7DB1;" parent="1" source="n1" target="i1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d2" value="default: same AZ" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#5B7DB1;fontColor=#5B7DB1;" parent="1" source="n2" target="i2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_x1" value="" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#7B6BB0;dashed=1;" parent="1" source="n1" target="i2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_x2" value="cross-zone (enabled in Task 3)" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#7B6BB0;fontColor=#7B6BB0;dashed=1;" parent="1" source="n2" target="i1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#5B7DB1&quot;&gt;&amp;#9632;&lt;/font&gt; Default routing (cross-zone disabled)&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#7B6BB0&quot;&gt;&amp;#9632;&lt;/font&gt; Cross-zone load balancing (dashed)&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#D18B5A&quot;&gt;&amp;#9632;&lt;/font&gt; Client traffic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5DDE8;fontColor=#2B3A55;fontSize=11;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="810" width="820" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

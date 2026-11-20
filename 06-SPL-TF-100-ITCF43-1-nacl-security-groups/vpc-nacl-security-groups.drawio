@@ -1,0 +1,76 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram id="vpc-nacl-sg" name="VPC NACL and Security Groups">
+    <mxGraphModel dx="1585" dy="940" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="920" background="#FAFBFD" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;SPL-TF-100-ITCF43-1 - Network ACLs and Security Groups in Amazon VPC&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:12px&quot;&gt;Two public subnets, each protected by a stateless network ACL and a stateful security group&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#2B3A55;" parent="1" vertex="1">
+          <mxGeometry x="40" y="10" width="900" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="internet" value="Internet" style="sketch=0;outlineConnect=0;gradientColor=none;dashed=0;html=1;fontSize=11;fontStyle=1;aspect=fixed;pointerEvents=1;strokeColor=none;fillColor=#232F3D;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontColor=#2B3A55;shape=mxgraph.aws4.internet;" parent="1" vertex="1">
+          <mxGeometry x="553" y="80" width="78" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" value="AnyCompany VPC" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=#FFFFFF;fontColor=#8C4FFF;" parent="1" vertex="1">
+          <mxGeometry x="40" y="270" width="1050" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="igw" value="Internet gateway" style="sketch=0;outlineConnect=0;gradientColor=none;dashed=0;html=1;fontSize=11;fontStyle=1;aspect=fixed;pointerEvents=1;strokeColor=none;fillColor=#8C4FFF;fontColor=#2B3A55;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;shape=mxgraph.aws4.internet_gateway;" parent="1" vertex="1">
+          <mxGeometry x="555" y="235" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sn1" value="AnyCompany Public subnet 1" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#5B7DB1;fillColor=#E3EDF8;fontColor=#5B7DB1;strokeWidth=3;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="360" width="450" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="nr1" value="&lt;b&gt;Net ACL 1&lt;/b&gt; (stateless)&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;Inbound: rule 10 - allow ALL traffic 0.0.0.0/0&lt;br&gt;Outbound: rule 10 - allow ALL traffic 0.0.0.0/0&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#2B3A55;" parent="sn1" vertex="1">
+          <mxGeometry x="20" y="45" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sg1" value="SG A (stateful)" style="rounded=1;arcSize=5;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C86B6B;strokeWidth=1.5;dashed=1;fontColor=#C86B6B;fontStyle=1;fontSize=12;verticalAlign=top;align=left;spacingLeft=12;spacingTop=6;container=1;collapsible=0;recursiveResize=0;" parent="sn1" vertex="1">
+          <mxGeometry x="30" y="120" width="390" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="inst1" value="Instance A&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;public IPv4&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="sg1" vertex="1">
+          <mxGeometry x="156" y="50" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sgr1" value="&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;Inbound: SSH (existing), HTTP, HTTPS, ICMP - from Anywhere-IPv4 (Task 2)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=11;fontColor=#2B3A55;" parent="sg1" vertex="1">
+          <mxGeometry x="20" y="170" width="350" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nacl1" value="Net ACL 1" style="sketch=0;outlineConnect=0;gradientColor=none;dashed=0;html=1;fontSize=11;fontStyle=1;aspect=fixed;pointerEvents=1;strokeColor=none;fillColor=#8C4FFF;fontColor=#8C4FFF;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;shape=mxgraph.aws4.network_access_control_list;" parent="1" vertex="1">
+          <mxGeometry x="470" y="340" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sn2" value="AnyCompany Public subnet 2" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7B6BB0;fillColor=#E9E4F5;fontColor=#7B6BB0;strokeWidth=3;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="580" y="360" width="450" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="nr2" value="&lt;b&gt;Net ACL 2&lt;/b&gt; (stateless)&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;Inbound: implicit deny only &amp;gt; rule 10 allow ALL (added in Task 3.2)&lt;br&gt;Outbound: rule 10 - allow ALL traffic 0.0.0.0/0&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=12;fontColor=#2B3A55;" parent="sn2" vertex="1">
+          <mxGeometry x="20" y="45" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sg2" value="SG B (stateful)" style="rounded=1;arcSize=5;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C86B6B;strokeWidth=1.5;dashed=1;fontColor=#C86B6B;fontStyle=1;fontSize=12;verticalAlign=top;align=left;spacingLeft=12;spacingTop=6;container=1;collapsible=0;recursiveResize=0;" parent="sn2" vertex="1">
+          <mxGeometry x="30" y="120" width="390" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="inst2" value="Instance B&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;public IPv4&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="sg2" vertex="1">
+          <mxGeometry x="156" y="50" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sgr2" value="&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;Inbound: HTTP, HTTPS, ICMP - from Anywhere-IPv4 (added in Task 3.2)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=11;fontColor=#2B3A55;" parent="sg2" vertex="1">
+          <mxGeometry x="20" y="170" width="350" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nacl2" value="Net ACL 2" style="sketch=0;outlineConnect=0;gradientColor=none;dashed=0;html=1;fontSize=11;fontStyle=1;aspect=fixed;pointerEvents=1;strokeColor=none;fillColor=#8C4FFF;fontColor=#8C4FFF;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;shape=mxgraph.aws4.network_access_control_list;" parent="1" vertex="1">
+          <mxGeometry x="980" y="340" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in" value="" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#D18B5A;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="internet" target="igw" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_s1" value="" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#7B6BB0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="igw" target="sn1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_s2" value="" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#7B6BB0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="igw" target="sn2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p1" value="ping public IP (Task 3)" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#4E9C7C;fontColor=#4E9C7C;exitX=1;exitY=0.3;entryX=0;entryY=0.3;" parent="1" source="inst1" target="inst2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p2" value="ping public IP (Task 3.2)" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#4E9C7C;fontColor=#4E9C7C;exitX=0;exitY=0.8;entryX=1;entryY=0.8;" parent="1" source="inst2" target="inst1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#8C4FFF&quot;&gt;&amp;#9632;&lt;/font&gt; Net ACL: stateless, at the subnet boundary&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#C86B6B&quot;&gt;&amp;#9632;&lt;/font&gt; Security group: stateful, at the instance&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#4E9C7C&quot;&gt;&amp;#9632;&lt;/font&gt; Connectivity tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D5DDE8;fontColor=#2B3A55;fontSize=11;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="40" y="830" width="900" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

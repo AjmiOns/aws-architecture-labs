@@ -1,0 +1,52 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram id="ec2-auto-scaling" name="EC2 Auto Scaling">
+    <mxGraphModel dx="1030" dy="611" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="880" background="#FAFBFD" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;SPL-29 - Introduction to Amazon EC2 Auto Scaling&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#5A6B85&quot; style=&quot;font-size:12px&quot;&gt;Launch template + Auto Scaling group: a terminated instance is replaced automatically&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#2B3A55;" parent="1" vertex="1">
+          <mxGeometry x="40" y="10" width="900" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lt" value="&lt;b&gt;Launch template&lt;/b&gt;&lt;br&gt;Lab-template (version 1)&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=&quot;#5A6B85&quot;&gt;AMI: Amazon Linux&lt;br&gt;Instance type: t3.micro&lt;br&gt;Security group: MySecurityGroup&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#FCEBDD;strokeColor=#D18B5A;strokeWidth=1.5;fontColor=#D18B5A;fontSize=13;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="290" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" value="Lab VPC" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_vpc2;strokeColor=#8C4FFF;fillColor=#FFFFFF;fontColor=#8C4FFF;" parent="1" vertex="1">
+          <mxGeometry x="330" y="110" width="780" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="asg" value="Auto Scaling group: Lab-Group&amp;nbsp;&amp;nbsp;&lt;font style=&quot;font-size:11px&quot;&gt;(min 1 | max 2 | health check grace period 60 s)&lt;/font&gt;" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_auto_scaling_group;strokeColor=#D86613;fillColor=#FFFFFF;fontColor=#D86613;dashed=1;" parent="vpc" vertex="1">
+          <mxGeometry x="30" y="50" width="720" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="sn1" value="Subnet 1" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7B6BB0;fillColor=#E9E4F5;fontColor=#7B6BB0;dashed=0;" parent="asg" vertex="1">
+          <mxGeometry x="30" y="70" width="330" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="inst" value="EC2 instance&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;t3.micro, Amazon Linux&lt;br&gt;&lt;b&gt;InService&lt;/b&gt; (Task 3)&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;" parent="sn1" vertex="1">
+          <mxGeometry x="126" y="110" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="&lt;font color=&quot;#C86B6B&quot;&gt;&lt;b&gt;Task 4:&lt;/b&gt; terminated by you&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;" parent="sn1" vertex="1">
+          <mxGeometry x="65" y="300" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sn2" value="Subnet 2" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;verticalAlign=top;align=left;spacingLeft=30;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7B6BB0;fillColor=#E9E4F5;fontColor=#7B6BB0;dashed=0;" parent="asg" vertex="1">
+          <mxGeometry x="380" y="70" width="330" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="repl" value="Replacement instance&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#5A6B85&quot;&gt;launched automatically&lt;br&gt;&lt;b&gt;Pending &amp;gt; InService&lt;/b&gt; (Task 4)&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#2B3A55;gradientDirection=north;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;gradientColor=#F78E04;fillColor=#D05C17;resIcon=mxgraph.aws4.ec2;opacity=60;" parent="sn2" vertex="1">
+          <mxGeometry x="126" y="110" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="&lt;font color=&quot;#4E9C7C&quot;&gt;&lt;b&gt;Keeps the group at min 1&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;" parent="sn2" vertex="1">
+          <mxGeometry x="65" y="300" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cw" value="Amazon CloudWatch: group metrics collection + periodic EC2 health checks" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F9E1E1;strokeColor=#C86B6B;strokeWidth=1.5;fontColor=#C86B6B;fontStyle=1;fontSize=12;" parent="asg" vertex="1">
+          <mxGeometry x="30" y="510" width="660" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="Subnet placement of the two instances is illustrative: the group launches instances in the subnets you selected." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#5A6B85;" parent="1" vertex="1">
+          <mxGeometry x="40" y="810" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e_lt" value="&lt;b&gt;defines&lt;/b&gt; what to launch" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#D18B5A;fontColor=#D18B5A;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="lt" target="asg" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_rep" value="&lt;b&gt;replace&lt;/b&gt;&lt;br&gt;(group size back to min 1)" style="html=1;rounded=0;strokeWidth=2;fontSize=11;labelBackgroundColor=#FFFFFF;endArrow=classic;strokeColor=#C86B6B;fontColor=#C86B6B;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="inst" target="repl" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
